@@ -1,10 +1,10 @@
+require("dotenv").config();
 import { v2 as cloudinary } from "cloudinary";
 import { app } from "./app";
 import connectDB from "./utils/db";
 import { iniSocketServer } from "./socketServer";
 import { initCronJobs } from "./cron/reminders";
 const http = require("http");
-require("dotenv").config();
 
 const server = http.createServer(app);
 
@@ -18,7 +18,7 @@ cloudinary.config({
 iniSocketServer(server);
 
 // ── Start server ───────────────────────────────────────────────────────────
-const PORT = 8080;
+const PORT = Number(process.env.PORT) || 8080;
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
   connectDB();
