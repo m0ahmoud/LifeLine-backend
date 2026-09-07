@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    /* أساسيات اللغة والمخرجات */
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./",
+
+    /* حل مشكلة (express_1.default is not a function) */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* الجودة والتحقق */
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+
+    /* إلغاء الخاصية التي تسببت في الخطأ الأخير */
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true
+  }
+}

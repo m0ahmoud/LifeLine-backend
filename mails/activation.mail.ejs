@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account Activation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      background-color: #4f46e5;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .content {
+      padding: 30px;
+      color: #333333;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .code {
+      font-size: 28px;
+      letter-spacing: 6px;
+      font-weight: bold;
+      color: #4f46e5;
+      margin: 20px 0;
+    }
+    .footer {
+      background-color: #f9fafb;
+      padding: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #777777;
+    }
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Activate Your Account</h2>
+    </div>
+
+    <div class="content">
+      <p>Hello <strong><%= user.name %></strong> 👋</p>
+
+      <p>
+        Thank you for registering.<br />
+        Please use the activation code below to verify your account.
+      </p>
+
+      <div class="code">
+        <%= activationCode %>
+      </div>
+
+      <p>
+        This code will expire in <strong>5 minutes</strong>.
+      </p>
+
+      <p>
+        If you didn’t create this account, you can safely ignore this email.
+      </p>
+
+      <p>
+        Need help?  
+        <a href="mailto:support@gmail.com">support@gmail.com</a>
+      </p>
+
+      <p>
+        Best regards,<br />
+        The Team
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>
+        © <%= new Date().getFullYear() %> All rights reserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
