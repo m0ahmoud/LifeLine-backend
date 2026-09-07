@@ -32,7 +32,7 @@ app.use(
     stream: {
       write: (message) => logger.http(message.trim()),
     },
-  })
+  }),
 );
 
 // ── Body & Cookie parser ───────────────────────────────────────────────────
@@ -40,7 +40,10 @@ app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 
 // ── CORS ───────────────────────────────────────────────────────────────────
-let allowedOrigins = ["http://localhost:3000"];
+let allowedOrigins = [
+  "http://localhost:3000",
+  "https://front-life-line.vercel.app",
+];
 if (process.env.ORIGIN) {
   try {
     if (process.env.ORIGIN.startsWith("[")) {
